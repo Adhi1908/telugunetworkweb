@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════
+   TELUGU NETWORK — Minecraft Server Theme
+   Design System & Global Styles
+   ══════════════════════════════════════════════ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-pixel: var(--font-press-start);
+  --font-pixel-body: var(--font-vt323);
+
+  /* Minecraft Color Palette */
+  --color-mc-green: #55FF55;
+  --color-mc-dark-green: #00AA00;
+  --color-mc-emerald: #2ECC71;
+  --color-mc-gold: #FFAA00;
+  --color-mc-yellow: #FFFF55;
+  --color-mc-red: #FF5555;
+  --color-mc-dark-red: #AA0000;
+  --color-mc-aqua: #55FFFF;
+  --color-mc-blue: #5555FF;
+  --color-mc-purple: #AA00AA;
+  --color-mc-light-purple: #FF55FF;
+  --color-mc-white: #FFFFFF;
+  --color-mc-gray: #AAAAAA;
+  --color-mc-dark-gray: #555555;
+
+  /* Surface Colors */
+  --color-surface-900: #0a0a12;
+  --color-surface-800: #0f0f1a;
+  --color-surface-700: #151524;
+  --color-surface-600: #1a1a2e;
+  --color-surface-500: #222240;
+  --color-surface-400: #2a2a4a;
+
+  /* Minecraft Block Colors */
+  --color-dirt: #8B6914;
+  --color-grass: #59C135;
+  --color-stone: #7F7F7F;
+  --color-obsidian: #1B1028;
+  --color-diamond: #4AEDD9;
+  --color-redstone: #FF0000;
+  --color-gold-block: #F5C542;
+  --color-netherite: #443A3B;
+}
+
+:root {
+  --background: #0a0a12;
+  --foreground: #e8e8f0;
+}
+
+/* ── Base Reset ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a4a #0a0a12;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(85, 255, 85, 0.3);
+  color: #55FF55;
+}
+
+/* ── Minecraft Button Base ── */
+.mc-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-family: var(--font-pixel), monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  background: #3C3C3C;
+  border: 3px solid;
+  border-color: #6B6B6B #1E1E1E #1E1E1E #6B6B6B;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-shadow: 2px 2px 0 #1a1a1a;
+  image-rendering: pixelated;
+}
+
+.mc-btn:hover {
+  background: #5a5a5a;
+  border-color: #8B8B8B #2E2E2E #2E2E2E #8B8B8B;
+}
+
+.mc-btn:active {
+  background: #2a2a2a;
+  border-color: #1E1E1E #6B6B6B #6B6B6B #1E1E1E;
+}
+
+.mc-btn-primary {
+  background: #2d6e12;
+  border-color: #55FF55 #143d08 #143d08 #55FF55;
+}
+
+.mc-btn-primary:hover {
+  background: #3a8a18;
+  border-color: #77FF77 #1a5010 #1a5010 #77FF77;
+}
+
+.mc-btn-gold {
+  background: #8a6914;
+  border-color: #FFAA00 #4a3808 #4a3808 #FFAA00;
+}
+
+.mc-btn-gold:hover {
+  background: #a07a1a;
+  border-color: #FFCC44 #5a4410 #5a4410 #FFCC44;
+}
+
+/* ── Glow Effects ── */
+.glow-green {
+  text-shadow:
+    0 0 10px rgba(85, 255, 85, 0.5),
+    0 0 20px rgba(85, 255, 85, 0.3),
+    0 0 40px rgba(85, 255, 85, 0.15);
+}
+
+.glow-gold {
+  text-shadow:
+    0 0 10px rgba(255, 170, 0, 0.5),
+    0 0 20px rgba(255, 170, 0, 0.3),
+    0 0 40px rgba(255, 170, 0, 0.15);
+}
+
+.glow-aqua {
+  text-shadow:
+    0 0 10px rgba(85, 255, 255, 0.5),
+    0 0 20px rgba(85, 255, 255, 0.3);
+}
+
+/* ── Pixel Border ── */
+.pixel-border {
+  border: 4px solid;
+  border-image: linear-gradient(
+    135deg,
+    rgba(85, 255, 85, 0.6),
+    rgba(85, 255, 85, 0.1),
+    rgba(255, 170, 0, 0.6)
+  ) 1;
+}
+
+.pixel-border-subtle {
+  border: 2px solid rgba(85, 255, 85, 0.2);
+}
+
+/* ── Glass Card ── */
+.mc-card {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 26, 0.9),
+    rgba(26, 26, 46, 0.7)
+  );
+  border: 1px solid rgba(85, 255, 85, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.mc-card:hover {
+  border-color: rgba(85, 255, 85, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 36, 0.95),
+    rgba(34, 34, 58, 0.8)
+  );
+}
+
+/* ── Section Divider (Grass Block Pattern) ── */
+.grass-divider {
+  height: 8px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #59C135 0px,
+      #59C135 8px,
+      #4aad2b 8px,
+      #4aad2b 16px,
+      #6dd43f 16px,
+      #6dd43f 24px
+    );
+  image-rendering: pixelated;
+}
+
+.dirt-divider {
+  height: 12px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #8B6914 0px,
+      #8B6914 8px,
+      #7a5c12 8px,
+      #7a5c12 16px,
+      #9c7618 16px,
+      #9c7618 24px
+    );
+  image-rendering: pixelated;
+}
+
+/* ── Animated Gradient Background ── */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(85, 255, 85, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 255, 85, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes pixel-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a5a;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
