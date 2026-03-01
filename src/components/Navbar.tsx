@@ -26,34 +26,20 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-surface-900/95 backdrop-blur-md border-b border-mc-green/10 shadow-[0_4px_30px_rgba(85,255,85,0.05)]"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative h-8 w-8 md:h-10 md:w-10">
-              <div className="absolute inset-0 bg-mc-green/20 rounded group-hover:bg-mc-green/30 transition-colors" />
-              <svg
-                viewBox="0 0 32 32"
-                className="relative w-full h-full"
-                style={{ imageRendering: "pixelated" }}
-              >
-                <rect x="4" y="4" width="8" height="8" fill="#55FF55" />
-                <rect x="12" y="4" width="8" height="8" fill="#00AA00" />
-                <rect x="20" y="4" width="8" height="8" fill="#55FF55" />
-                <rect x="4" y="12" width="8" height="8" fill="#00AA00" />
-                <rect x="12" y="12" width="8" height="8" fill="#55FF55" />
-                <rect x="20" y="12" width="8" height="8" fill="#00AA00" />
-                <rect x="4" y="20" width="8" height="8" fill="#8B6914" />
-                <rect x="12" y="20" width="8" height="8" fill="#7a5c12" />
-                <rect x="20" y="20" width="8" height="8" fill="#8B6914" />
-              </svg>
-            </div>
+            <img
+              src="/af054a97ba97bb85c24d592bb25a0b80.png"
+              alt="Telugu Network Logo"
+              className="h-8 w-8 md:h-10 md:w-10 object-contain"
+            />
             <span className="font-[family-name:var(--font-press-start)] text-[8px] md:text-[10px] text-mc-green tracking-wider">
               TELUGU
               <br />
